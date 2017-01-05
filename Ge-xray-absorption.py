@@ -47,7 +47,7 @@ Ge_Z = 32
 Ge_atomic_wt =  72.5899963
 Ge_density =  5.32299995
 
-energy = linspace(1,100,10000)
+energy = linspace(1,200,20000)
 
 Ge_attenuation_len_3mm = []
 Ge_absorption_3mm = []
@@ -72,7 +72,7 @@ for e in energy:
 
 figure()
 plot(energy,Ge_absorption_3mm,'k-', energy,Ge_absorption_10mm,'r-')
-xlim(1,100)
+xlim(1,200)
 ylim(0.0,1.1)
 xlabel('Energy (keV)', fontsize = 18)
 ylabel('Absorption', fontsize = 18)
