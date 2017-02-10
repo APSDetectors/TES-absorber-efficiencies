@@ -47,7 +47,7 @@ Ge_Z = 32
 Ge_atomic_wt =  72.5899963
 Ge_density =  5.32299995
 
-energy = linspace(1,200,20000)
+energy = linspace(1,160,20000)
 
 Ge_attenuation_len_3mm = []
 Ge_absorption_3mm = []
@@ -70,17 +70,32 @@ for e in energy:
 	Ge_absorption_10mm.append(1.0 - exp(-1*thickness_Ge_10mm/(10000*(Ge_density*CS_Total(Ge_Z,e))**-1)))
 
 
+# figure()
+# plot(energy,Ge_absorption_3mm,'k-', energy,Ge_absorption_10mm,'r-')
+# xlim(1,200)
+# ylim(0.0,1.1)
+# xlabel('Energy (keV)', fontsize = 18)
+# ylabel('Absorption', fontsize = 18)
+# title('Germanium X-ray Absorption', fontsize = 20)
+# legend((r'%d microns' % (thickness_Ge_3mm), r'%d microns' % (thickness_Ge_10mm)  ), shadow = True, loc = 0,numpoints = 2)
+# ltext = gca().get_legend().get_texts()
+# setp(ltext[0], fontsize = 12, color = 'k')
+# setp(ltext[1], fontsize = 12, color = 'r')
+# grid()
+# show()
+
+
 figure()
-plot(energy,Ge_absorption_3mm,'k-', energy,Ge_absorption_10mm,'r-')
-xlim(1,200)
+plot(energy,Ge_absorption_3mm,'r-',linewidth=3)
+xlim(0,160)
 ylim(0.0,1.1)
 xlabel('Energy (keV)', fontsize = 18)
 ylabel('Absorption', fontsize = 18)
 title('Germanium X-ray Absorption', fontsize = 20)
+legend((r'%d mm' % (thickness_Ge_3mm)), shadow = True, loc = 0,numpoints = 2)
 legend((r'%d microns' % (thickness_Ge_3mm), r'%d microns' % (thickness_Ge_10mm)  ), shadow = True, loc = 0,numpoints = 2)
 ltext = gca().get_legend().get_texts()
-setp(ltext[0], fontsize = 12, color = 'k')
-setp(ltext[1], fontsize = 12, color = 'r')
+setp(ltext[0], fontsize = 16, color = 'k')
 grid()
 show()
 
