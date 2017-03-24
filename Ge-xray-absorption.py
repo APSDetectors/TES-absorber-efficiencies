@@ -87,7 +87,7 @@ for e in energy:
 
 figure()
 plot(energy,Ge_absorption_3mm,'r-',linewidth=3)
-xlim(0,160)
+xlim(0,160
 ylim(0.0,1.1)
 xlabel('Energy (keV)', fontsize = 18)
 ylabel('Absorption', fontsize = 18)

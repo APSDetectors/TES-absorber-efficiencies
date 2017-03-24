@@ -67,7 +67,7 @@ Bi_absorption = []
 Au_absorption = []
 
 
-thickness = 300.
+thickness = 20.
 
 for e in energy:
 	Sn_attenuation_len.append( 10000*(Sn_density*CS_Total(Sn_Z,e))**-1  )# microns
