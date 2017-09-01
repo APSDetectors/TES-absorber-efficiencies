@@ -65,9 +65,9 @@ thickness_Ge_10mm = 10000. # In microns
 for e in energy:
 	Ge_attenuation_len_3mm.append( 10000*(Ge_density*CS_Total(Ge_Z,e))**-1  )# microns
 	Ge_absorption_3mm.append(1.0 - exp(-1*thickness_Ge_3mm/(10000*(Ge_density*CS_Total(Ge_Z,e))**-1)))
-
 	Ge_attenuation_len_10mm.append( 10000*(Ge_density*CS_Total(Ge_Z,e))**-1  )# microns
 	Ge_absorption_10mm.append(1.0 - exp(-1*thickness_Ge_10mm/(10000*(Ge_density*CS_Total(Ge_Z,e))**-1)))
+
 
 
 # figure()
@@ -86,8 +86,14 @@ for e in energy:
 
 
 figure()
+plot(energy,Ge_attenuation_len_3mm,'r-',linewidth=3)
+title('Germanium Attenuation Length')
+show()
+
+
+figure()
 plot(energy,Ge_absorption_3mm,'r-',linewidth=3)
-xlim(0,160
+xlim(0,160)
 ylim(0.0,1.1)
 xlabel('Energy (keV)', fontsize = 18)
 ylabel('Absorption', fontsize = 18)
