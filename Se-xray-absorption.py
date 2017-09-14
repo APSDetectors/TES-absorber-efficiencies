@@ -59,19 +59,15 @@ Se_absorption_100um = []
 
 
 ## 3 mm thick Germanium
-thickness_Se_50um = 50. # In microns
 thickness_Se_100um = 100. # In microns
 
 for e in energy:
-	Se_attenuation_len_50um.append( 10000*(Se_density*CS_Total(Se_Z,e))**-1  )# microns
-	Se_absorption_50um.append(1.0 - exp(-1*thickness_Se_50um/(10000*(Se_density*CS_Total(Se_Z,e))**-1)))
 	
 	Se_attenuation_len_100um.append( 10000*(Se_density*CS_Total(Se_Z,e))**-1  )# microns
 	Se_absorption_100um.append(1.0 - exp(-1*thickness_Se_100um/(10000*(Se_density*CS_Total(Se_Z,e))**-1)))
 	
 	
 print thickness_Se_100um
-print thickness_Se_50um
 
 
 figure()
@@ -80,10 +76,10 @@ xlim(0,100)
 ylim(0.0,1.1)
 xlabel('Energy (keV)', fontsize = 18)
 ylabel('Absorption', fontsize = 18)
-title('Selenium X-ray Absorption', fontsize = 20)
-legend((r'%d um' % (thickness_Se_100um)), shadow = True, loc = 0,numpoints = 2)
-ltext = gca().get_legend().get_texts()
-setp(ltext[0], fontsize = 16, color = 'k')
+title('Selenium X-ray Absorption 100 microns', fontsize = 20)
+#legend((r'%d um' % (thickness_Se_100um)), shadow = True, loc = 0,numpoints = 2)
+#ltext = gca().get_legend().get_texts()
+#setp(ltext[0], fontsize = 16, color = 'k')
 grid()
 show()
 
